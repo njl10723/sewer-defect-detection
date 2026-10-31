@@ -1,0 +1,18 @@
+# Dataset config for YOLOv8.
+# Set `path` to the full path of your dataset folder, for example
+# /Users/you/sewer-dataset or, in Google Colab, /content/drive/MyDrive/sewer-dataset
+path: /full/path/to/sewer-dataset
+
+# Image folders, relative to `path`. Validation must use held-out images,
+# never the training folder, or the validation score is meaningless.
+train: images/train
+val: images/val
+
+names:
+  0: Buckling
+  1: Crack
+  2: Debris
+  3: Hole
+  4: Joint offset
+  5: Obstacle
+  6: Utility intrusion
