@@ -86,10 +86,10 @@ YOLOv8n with Ultralytics 8.1, trained from scratch for 300 epochs with batch siz
 
 ## acknowledgments
 
-Built with [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics). My code started from these tutorials:
+built w [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics). code started from following tutorials:
 
-- [The YouTube tutorial I followed](https://www.youtube.com/watch?v=TRMZCsBfX78) to build the project
-- Computer Vision Engineer's [step-by-step guide to training YOLOv8 on a custom dataset](https://github.com/computervisioneng/train-yolov8-custom-dataset-step-by-step-guide), which my training setup and Colab config are based on
-- Nicolai Nielsen's "How to Train YOLOv8 Object Detection on a Custom Dataset" Colab notebook, which my validation and prediction commands are based on
+- [The YouTube tutorial I followed](https://www.youtube.com/watch?v=TRMZCsBfX78) -> to build the project
+- Computer Vision Engineer's [step-by-step guide to training YOLOv8 on a custom dataset](https://github.com/computervisioneng/train-yolov8-custom-dataset-step-by-step-guide), -> my training setup and Colab config are based on
+- Nicolai Nielsen's "How to Train YOLOv8 Object Detection on a Custom Dataset" Colab notebook, -> my validation and prediction commands are based on
 
-I learned object detection basics from Nicholas Renotte's [TensorFlow Object Detection course](https://www.youtube.com/watch?v=yqkISICHH-U).
+I also learned object detection basics from Nicholas Renotte's [TensorFlow Object Detection course](https://www.youtube.com/watch?v=yqkISICHH-U)
