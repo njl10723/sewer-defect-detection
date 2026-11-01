@@ -1,4 +1,4 @@
-# Sewer Pipe Defect Detection with YOLOv8
+# sewer pipe defect detection with YOLOv8
 
 A YOLOv8 object detection model that finds seven kinds of damage in sewer pipe inspection images: buckling, cracks, debris, holes, joint offsets, obstacles, and utility intrusions.
 
@@ -6,11 +6,11 @@ I built this in spring 2024 as a self-taught science fair project. It was the vi
 
 ![Predictions on validation images](results/val_batch0_pred.jpg)
 
-## Results
+## results
 
 I trained a YOLOv8n model for 300 epochs and scored it with mAP@0.5: mean average precision, where a detection counts as correct if its box overlaps the true box by at least 50%.
 
-| Class | Training images | Validation images |
+| class | training images | validation images |
 | --- | --- | --- |
 | Buckling | 0.938 | 0.427 |
 | Crack | 0.947 | 0.375 |
@@ -19,19 +19,19 @@ I trained a YOLOv8n model for 300 epochs and scored it with mAP@0.5: mean averag
 | Joint offset | 0.964 | 0.198 |
 | Obstacle | 0.983 | 0.558 |
 | Utility intrusion | 0.987 | 0.609 |
-| **All classes** | **0.969** | **0.441** |
+| **all classes** | **0.969** | **0.441** |
 
 the model nearly memorized the images it trained on but did much worse on images it had never seen. The model had started overfitting (this was my first coding project and I wasn't as familiar with the concept at the time) and the validation score is the honest measure of how the model would do in a real pipe.
 
 ![Training and validation curves](results/results.png)
 
-## What I learned
+## what I learned
 
 - The model started overfitting around epoch 100. Training loss kept dropping the whole time, but validation loss hit its lowest point there and then slowly went back up. Validation mAP@0.5 stalled around 0.44, so the last 200 epochs mostly taught the model to memorize the training images instead of getting better at new ones.
 - I also didn’t realize until later that I trained the model from scratch. I loaded yolov8n.yaml, which builds the network with random weights, instead of yolov8n.pt, which starts from weights already trained on the COCO dataset. With a dataset this small, starting from pretrained weights would probably help a lot, so that’s the first thing I want to try. train.py has a --pretrained option for it.
 - Joint offsets gave the model the most trouble, with a validation score of 0.198. It could be that the dataset just didn’t have many examples of them. results/labels.jpg shows how many labels each class has, so that’s where I’d start to loko if I tried the project again.
 
-## Repository layout
+## repository layout
 
 ```
 ├── data.yaml        dataset config: class names and image folders
@@ -42,7 +42,7 @@ the model nearly memorized the images it trained on but did much worse on images
 └── results/         training curves, confusion matrices, and settings from that run
 ```
 
-## Usage
+## usage
 
 Install dependencies (Python 3.8 or newer):
 
